@@ -37,12 +37,14 @@ namespace Ludo_alpha_final
         {
             this.InitializeComponent();
             Window.Current.SizeChanged += Current_SizeChanged;
+            Scaling.SetScale();
             
         }
 
         private void Current_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
         {
-            throw new NotImplementedException();
+            bounds = ApplicationView.GetForCurrentView().VisibleBounds;
+            Scaling.SetScale();
         }
 
         private void GameCanvas_CreateResources(CanvasControl sender, CanvasCreateResourcesEventArgs args)
@@ -58,6 +60,8 @@ namespace Ludo_alpha_final
         private void GameCanvas_Draw(CanvasControl sender, CanvasDrawEventArgs args)
         {
             args.DrawingSession.DrawImage(Scaling.Img(MenuScreen));
+
+            GameCanvas.Invalidate();
         }
 
         private void GameCanvas_Tapped(object sender, TappedRoutedEventArgs e)
