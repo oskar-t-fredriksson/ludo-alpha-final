@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Graphics.Canvas.UI;
+using Microsoft.Graphics.Canvas.UI.Xaml;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +27,21 @@ namespace Ludo_alpha_final
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void GameCanvas_CreateResources(CanvasControl sender, CanvasCreateResourcesEventArgs args)
+        {
+
+        }
+
+        private void GameCanvas_Draw(CanvasControl sender, CanvasDrawEventArgs args)
+        {
+
+        }
+
+        private void GameCanvas_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
         }
     }
 }
